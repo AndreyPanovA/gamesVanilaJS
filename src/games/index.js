@@ -4,7 +4,10 @@ import Game from "../utils/game";
 
 
 
-const game = new Game({ctx}).updateGame()
+const game = new Game({ctx})
+
+
+game.startGame()
 
 
 
