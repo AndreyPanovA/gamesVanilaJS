@@ -1,22 +1,20 @@
+import {CONTROLS_BTN} from "../constants/constants";
+
 class MovementsControls {
     constructor(player) {
         this.player = player
         this.addListeners()
-        this.controlsBtn = {
-            ArrowRight: "ArrowRight",
-            ArrowLeft: "ArrowLeft",
-            ArrowUp: "ArrowUp",
-            ArrowDown: "ArrowDown"
-        }
+        this.lastKeyPress = null
     }
 
     onKeyDown = (event) => {
+        this.lastKeyPress = event.key
         switch (event.key) {
-            case this.controlsBtn.ArrowUp:
+            case CONTROLS_BTN.ArrowUp:
                 return this.player.up()
-            case this.controlsBtn.ArrowLeft:
+            case CONTROLS_BTN.ArrowLeft:
                 return this.player.leftStep()
-            case this.controlsBtn.ArrowRight:
+            case CONTROLS_BTN.ArrowRight:
                 return this.player.rightStep()
             default:
                 console.log(event.key)
@@ -25,11 +23,11 @@ class MovementsControls {
     }
     onKeyUp = (event) => {
         switch (event.key) {
-            case this.controlsBtn.ArrowUp:
+            case CONTROLS_BTN.ArrowUp:
                 return this.player.stopYStep()
-            case this.controlsBtn.ArrowLeft:
+            case CONTROLS_BTN.ArrowLeft:
                 return this.player.stopXStep()
-            case this.controlsBtn.ArrowRight:
+            case CONTROLS_BTN.ArrowRight:
                 return this.player.stopXStep()
             default:
                 console.log(event.key)

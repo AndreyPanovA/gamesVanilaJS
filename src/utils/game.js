@@ -15,7 +15,7 @@ class Game {
                 y: 5
             },
             height: 50,
-            width: 50
+            width: 50,
         })
         this.enemy = new Enemy({
             position: {
@@ -35,13 +35,16 @@ class Game {
 
     clearCanvas() {
         this.ctx.clearRect(0, 0, canvas.width, canvas.height)
+        this.ctx.fillStyle = "#333"
+        this.ctx.fillRect(0, 0, canvas.width, canvas.height)
     }
 
     updateGame() {
+        requestAnimationFrame(this.updateGame.bind(this))
         this.clearCanvas()
         this.player.update()
         this.enemy.update()
-        requestAnimationFrame(this.updateGame.bind(this))
+        this.player.detectCollision(this.player.position, this.enemy)
     }
     startGame() {
         this.updateGame()
