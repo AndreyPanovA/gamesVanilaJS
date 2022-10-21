@@ -16,6 +16,8 @@ class MovementsControls {
                 return this.player.leftStep()
             case CONTROLS_BTN.ArrowRight:
                 return this.player.rightStep()
+            case CONTROLS_BTN.ArrowDown:
+                return this.player.attack()
             default:
                 console.log(event.key)
         }
@@ -29,6 +31,8 @@ class MovementsControls {
                 return this.player.stopXStep()
             case CONTROLS_BTN.ArrowRight:
                 return this.player.stopXStep()
+            case CONTROLS_BTN.ArrowDown:
+                return this.player.stopAttack()
             default:
                 console.log(event.key)
         }

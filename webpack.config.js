@@ -14,9 +14,17 @@ module.exports = {
     devServer: {
         port: 4200
     },
+    module: {
+        rules: [
+            {
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+            },
+        ]
+    },
     plugins: [
         new html({
-            title:"games",
+            title: "games",
             template: "./index.html"
         })
     ]

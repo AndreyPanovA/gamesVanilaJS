@@ -1,7 +1,7 @@
 import {css} from "./css"
 function createCanvas() {
-    const HEIGHT = 800
-    const WIDTH = 800
+    const HEIGHT =innerHeight
+    const WIDTH = innerWidth
     const DPI_WIDTH = WIDTH * 2
     const DPI_HEIGHT = HEIGHT * 2
     const PADDING = 40
